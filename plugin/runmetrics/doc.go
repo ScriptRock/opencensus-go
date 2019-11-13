@@ -1,4 +1,4 @@
-// Copyright 2018, OpenCensus Authors
+// Copyright 2019, OpenCensus Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,16 +11,13 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+// Package runmetrics contains support for runtime metrics.
 //
-
-package stats
-
-// Units are encoded according to the case-sensitive abbreviations from the
-// Unified Code for Units of Measure: http://unitsofmeasure.org/ucum.html
-const (
-	UnitNone          = "1" // Deprecated: Use UnitDimensionless.
-	UnitDimensionless = "1"
-	UnitBytes         = "By"
-	UnitMilliseconds  = "ms"
-	UnitSeconds       = "s"
-)
+// To enable collecting runtime metrics, just call Enable():
+//
+//     _ := runmetrics.Enable(runmetrics.RunMetricOptions{
+//         EnableCPU: true,
+//         EnableMemory: true,
+//     })
+package runmetrics // import "go.opencensus.io/plugin/runmetrics"
